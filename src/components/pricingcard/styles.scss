@@ -1,0 +1,44 @@
+.price-card {
+  width: 23%;
+  min-height: 72vh;
+  background: #8563ee;
+  padding: 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  flex-direction: column;
+  @media (max-width: 1024px) {
+    width: 30%;
+  }
+  @media (max-width: 768px) {
+    width: 70%;
+  }
+  @media (max-width: 500px) {
+    width: 100%;
+  }
+  .type {
+    padding: 10px 6px;
+    background-color: #e6787a;
+  }
+  .serv {
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+    span {
+      font-size: 18px;
+    }
+  }
+  .price {
+    h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+    button {
+      color: #fff;
+      background-color: #e6787a;
+      padding: 10px 20px;
+      outline: none;
+      border: none;
+    }
+  }
+}

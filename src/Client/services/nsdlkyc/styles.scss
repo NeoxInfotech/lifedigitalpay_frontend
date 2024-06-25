@@ -1,0 +1,86 @@
+.nsdl {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 0px 20px;
+  h1 {
+    margin-top: 30px;
+  }
+  .mid-sec {
+    width: 100%;
+    img {
+      height: 70px;
+      margin-bottom: 40px;
+    }
+    form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 20px;
+      .pan-select {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        @media (max-width: 600px) {
+          flex-direction: column;
+        }
+        .button {
+          padding: 10px;
+          outline: none;
+          border: none;
+          background-color: #6386ee;
+          color: #fff;
+          cursor: pointer;
+          &:hover {
+            background-color: #2959e9;
+          }
+        }
+        .button-selected {
+          padding: 10px;
+          outline: none;
+          border: none;
+          background-color: #2959e9;
+          color: #fff;
+          cursor: not-allowed;
+        }
+      }
+      input {
+        width: 50%;
+        padding: 12px;
+        outline: none;
+      }
+      button {
+        padding: 18px;
+        background-color: #2959e9;
+        color: #fff;
+        border: none;
+        outline: none;
+        cursor: pointer;
+      }
+      .alert {
+        color: red;
+        font-weight: 800;
+      }
+    }
+  }
+}
+
+.nsdl-active {
+  border-radius: 20px;
+  background-color: #e2e0e0;
+  min-height: 300px;
+  padding: 30px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .active {
+    margin-top: 30px;
+    padding: 10px 30px;
+    outline: none;
+    border: none;
+    color: #fff;
+    background-color: rgb(2, 194, 2);
+  }
+}

@@ -1,0 +1,99 @@
+.recharge-service {
+  margin-top: 30px;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 40px 0px;
+  box-shadow: 15px 11px 19px -14px rgba(0, 0, 0, 0.39);
+  .recharge-img {
+    height: 180px;
+    width: 180px;
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .recharge-form {
+    display: flex;
+    width: 40%;
+    @media (max-width: 768px) {
+      width: 90%;
+    }
+    flex-direction: column;
+    gap: 15px;
+    .provider {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      &:hover {
+        .provd-names {
+          display: flex;
+        }
+      }
+      .provd-names {
+        position: absolute;
+        top: 100%;
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #6386ee;
+        padding: 10px 20px;
+        color: #fff;
+        span {
+          cursor: pointer;
+          padding: 3px;
+          &:hover {
+            background-color: #fff;
+            color: #000;
+          }
+        }
+      }
+    }
+    input {
+      padding: 10px 20px;
+      outline: none;
+    }
+    .butt {
+      text-align: center;
+      button {
+        width: 120px;
+        outline: none;
+        border: none;
+        margin: 0px 5px;
+        padding: 12px 0px;
+        background-color: #e6787a;
+        color: #fff;
+      }
+    }
+  }
+
+  .plans {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-height: 300px;
+    overflow-y: scroll;
+    .plan-list {
+      display: flex;
+      gap: 25px;
+      padding: 20px 10px;
+      background-color: #dfdcdc;
+      margin-bottom: 10px;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+  }
+  .reciept {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    background-color: rgb(1, 167, 1);
+    color: white;
+    padding: 15px;
+  }
+}

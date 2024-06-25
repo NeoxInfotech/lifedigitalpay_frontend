@@ -1,0 +1,42 @@
+.partner {
+  min-height: 100vh;
+  display: flex;
+  position: relative;
+  .left {
+    width: 18%;
+    padding: 20px;
+    background: #e6787a;
+  }
+  .right {
+    width: 82%;
+    padding: 20px;
+    overflow: hidden;
+
+    .prof-header {
+      margin-bottom: 30px;
+      height: 60px;
+      padding: 0px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #ddd;
+      border-radius: 20px;
+      .prof {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        .prof-tag {
+          display: flex;
+          // flex-direction: column;
+          gap: 3px;
+          .type {
+            font-size: 12px;
+          }
+        }
+        .ico {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

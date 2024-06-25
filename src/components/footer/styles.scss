@@ -1,0 +1,22 @@
+.footer {
+  min-height: 60px;
+  background-color: #6386ee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 50px;
+  color: #fff;
+  @media (max-width: 690px) {
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 20px;
+    text-align: center;
+  }
+  .links {
+    display: flex;
+    gap: 20px;
+    span {
+      text-decoration: none;
+    }
+  }
+}

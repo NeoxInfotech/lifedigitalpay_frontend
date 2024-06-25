@@ -1,0 +1,90 @@
+.wallet-history {
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  .table {
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .search {
+      margin-bottom: 20px;
+      display: flex;
+      gap: 20px;
+      input {
+        padding: 10px 20px;
+        outline: none;
+      }
+      button {
+        padding: 10px 20px;
+        border: none;
+        outline: none;
+        background: #6386ee;
+        color: #fff;
+      }
+    }
+    width: 95%;
+    tbody {
+      width: 100%;
+      text-align: center;
+      overflow-x: scroll;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      .fail {
+        background: red;
+        color: #ddd;
+      }
+      tr {
+        @media (max-width: 500px) {
+          display: flex;
+          flex-direction: column;
+          border-bottom: 5px solid #6386ee;
+        }
+
+        th {
+          padding: 20px 6px;
+          background-color: #e6787a;
+          color: #fff;
+        }
+        td {
+          padding: 15px 0px;
+          border: 1px solid black;
+          height: 50px;
+        }
+        .udetail {
+          display: flex;
+          gap: 10px;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+  .pagination {
+    margin-top: 20px;
+    text-align: end;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 10px;
+    .prev,
+    .next {
+      padding: 6px 10px;
+      color: #fff;
+      background: #6386ee;
+      cursor: pointer;
+    }
+    .page-item {
+      padding: 6px 10px;
+      background: #ddd;
+      cursor: pointer;
+    }
+    .active {
+      background: #e6787a;
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+}
