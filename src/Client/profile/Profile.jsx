@@ -55,7 +55,7 @@ const Profile = () => {
     }
     return (
         <div className='profile'>
-            <h1>Souparno's Profile</h1>
+            <h1>{user?.name}'s Profile</h1>
             <div className="allform">
                 <div className='form' >
                     <div className='form-row'>

@@ -203,6 +203,29 @@ export const AdminContent = [
     },
     {
         id: 6,
+        cat: "Recharge Service",
+        children: [
+            {
+                id: 1,
+                subcat: "Mobile Recharge",
+                link: "/mobilerecharge",
+            },
+            {
+                id: 2,
+                subcat: "DTH Recharge",
+                link: "/dthrecharge",
+            },
+            {
+                id: 3,
+                subcat: "Recharge History",
+                link: "/rechargehistory",
+            },
+        ],
+
+    },
+
+    {
+        id: 7,
         cat: "Web Management",
         children: [
             {
@@ -324,25 +347,27 @@ export const distributorContent = [
     },
     {
         id: 6,
-        cat: "Web Management",
+        cat: "Recharge Service",
         children: [
             {
                 id: 1,
-                subcat: "E-KYC PAN Card",
-                link: "/nsdlekyc",
+                subcat: "Mobile Recharge",
+                link: "/mobilerecharge",
             },
             {
                 id: 2,
-                subcat: "E-KYC History",
-                link: "/nsdlhistory",
+                subcat: "DTH Recharge",
+                link: "/dthrecharge",
             },
             {
                 id: 3,
-                subcat: "PAN Status",
-                link: "/nsdlstatus",
+                subcat: "Recharge History",
+                link: "/rechargehistory",
             },
         ],
 
     },
+
+
 
 ]
