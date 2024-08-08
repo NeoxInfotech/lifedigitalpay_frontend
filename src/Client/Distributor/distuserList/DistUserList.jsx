@@ -1,19 +1,22 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "./styles.scss"
 import axios from "axios"
-import { server } from '../../main'
 import toast from 'react-hot-toast'
 import UpdateModal from './UpdateModal'
+import { server } from '../../../main'
+import { UserContext } from '../../../context/userContext'
 
-const AdminUserList = () => {
+const DistUserList = () => {
     const [userData, setUserData] = useState([])
     const [updateModal, setUpdateModal] = useState(false)
     const [updateUser, setUpdateUser] = useState([])
     const [transferamount, setTransferAmount] = useState()
     const [activate, setActivate] = useState(true)
+    const { user } = useContext(UserContext)
+
     const fetchUsers = async () => {
         try {
-            const users = await axios.get(`${server}/user/allusers`, { withCredentials: true })
+            const users = await axios.get(`${server}/user/distusers/${user?.username}`, { withCredentials: true })
             setUserData(users.data.message);
         } catch (error) {
             toast.error("Something Went Wrong")
@@ -28,6 +31,10 @@ const AdminUserList = () => {
             console.log(error)
         }
 
+    }
+    const handleUpdate = (u) => {
+        setUpdateModal(true)
+        setUpdateUser(u)
     }
 
     const getChangesActions = (e) => {
@@ -49,12 +56,6 @@ const AdminUserList = () => {
             console.log(error)
         }
 
-    }
-
-
-    const handleUpdate = (u) => {
-        setUpdateModal(true)
-        setUpdateUser(u)
     }
 
     useEffect(() => {
@@ -80,7 +81,7 @@ const AdminUserList = () => {
                     </tr>
                     {
                         userData?.map((user) => (
-                            <tr>
+                            <tr >
                                 <td>
                                     <p>{user.name}</p>
                                     <p>{user.username}</p>
@@ -149,4 +150,4 @@ const AdminUserList = () => {
     )
 }
 
-export default AdminUserList
+export default DistUserList

@@ -14,7 +14,7 @@ export const dashboardconstant = [
     {
         id: 2,
         img: utipan,
-        text: "UTI Coupon Purchase",
+        text: "UTI Portal Login",
         linkto: "/utiekyc",
     },
     {

@@ -11,28 +11,46 @@
   }
   .cat {
     cursor: pointer;
-    padding: 8px;
-    padding: 5px;
+    padding: 8px 15px;
     margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    .dash-log {
+      height: 20px;
+      filter: invert(1);
+    }
     &:hover {
-      background-color: #000;
+      background-color: #ad393b;
+      border-radius: 20px;
     }
   }
+
   .cats {
     cursor: pointer;
-    padding: 8px;
+    padding: 8px 15px;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 5px;
     margin-bottom: 16px;
     &:hover {
-      background-color: #000;
+      background-color: #ad393b;
+      border-radius: 20px;
+    }
+    .each {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      img {
+        height: 20px;
+        filter: invert(1);
+      }
     }
     .sub-cat {
       padding: 10px;
-      background: #fff;
-      color: #000;
+      border-radius: 20px;
+      background: #ad393b;
+      color: #fff;
       display: flex;
       flex-direction: column;
       gap: 8px;
@@ -40,7 +58,7 @@
         cursor: pointer;
         padding: 6px;
         &:hover {
-          background-color: #000;
+          background-color: #e6787a;
           color: #fff;
         }
       }

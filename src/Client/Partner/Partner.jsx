@@ -18,6 +18,8 @@ import NsdlHistory from '../servicerecords/nsdlhistory/NsdlHistory'
 import AddAdminUser from '../../Admin/addAdminUsers/AddAdminUser'
 import AdminUserList from '../../Admin/adminUserList/AdminUserList'
 import UtiCoupon from '../services/uti/UtiCoupon/UtiCoupon'
+import AddDistUser from '../Distributor/addDistUser/AddDistUser'
+import DistUserList from '../Distributor/distuserList/DistUserList'
 
 
 const Partner = () => {
@@ -63,6 +65,8 @@ const Partner = () => {
                             <Route path='/utiekyc' element={<UtiCoupon />} />
                             {user?.acctype === "Admin" ? <Route path='/adduseradmin' element={<AddAdminUser />} /> : null}
                             {user?.acctype === "Admin" ? <Route path='/alluserlist' element={<AdminUserList />} /> : null}
+                            {user?.acctype === "Distributor" ? <Route path='/adddistuser' element={<AddDistUser />} /> : null}
+                            {user?.acctype === "Distributor" ? <Route path='/distuserlist' element={<DistUserList />} /> : null}
                         </Routes>
                 }
 

@@ -1,3 +1,11 @@
+import wallet from "../assets/walletmanage.png"
+import margin from "../assets/marginmanage.png"
+import user from "../assets/usermanage.png"
+import uti from "../assets/uti.png"
+import nsdl from "../assets/nsdl.png"
+import web from "../assets/webmanage.png"
+import recharge from "../assets/recharge.png"
+
 export const siderContent = [
     {
         id: 1,
@@ -39,18 +47,13 @@ export const siderContent = [
         children: [
             {
                 id: 1,
-                subcat: "Coupon Purchase",
+                subcat: "Portal Login",
                 link: "/utiekyc",
             },
             {
                 id: 2,
-                subcat: "New Psa Password Reset",
-                link: "/psapassword",
-            },
-            {
-                id: 3,
-                subcat: "Psa Profile Update",
-                link: "/psaprofile",
+                subcat: "Uti History",
+                link: "/utihistory",
             },
         ],
 
@@ -109,6 +112,7 @@ export const AdminContent = [
     {
         id: 1,
         cat: "Margin management",
+        ico: margin,
         children: [
             {
                 id: 1,
@@ -126,6 +130,7 @@ export const AdminContent = [
     {
         id: 2,
         cat: "User Manage",
+        ico: user,
         children: [
             {
                 id: 1,
@@ -143,6 +148,7 @@ export const AdminContent = [
     {
         id: 3,
         cat: "Manage Wallet",
+        ico: wallet,
         children: [
             {
                 id: 1,
@@ -160,21 +166,17 @@ export const AdminContent = [
     {
         id: 4,
         cat: "UTI Pan Service",
+        ico: uti,
         children: [
             {
                 id: 1,
-                subcat: "Coupon Purchase",
+                subcat: "Portal Login",
                 link: "/utiekyc",
             },
             {
                 id: 2,
-                subcat: "New Psa Password Reset",
-                link: "/",
-            },
-            {
-                id: 3,
-                subcat: "Psa Profile Update",
-                link: "/",
+                subcat: "Uti History",
+                link: "/utihistory",
             },
         ],
 
@@ -182,6 +184,7 @@ export const AdminContent = [
     {
         id: 5,
         cat: "NSDL Pan Service",
+        ico: nsdl,
         children: [
             {
                 id: 1,
@@ -204,6 +207,7 @@ export const AdminContent = [
     {
         id: 6,
         cat: "Recharge Service",
+        ico: recharge,
         children: [
             {
                 id: 1,
@@ -227,6 +231,7 @@ export const AdminContent = [
     {
         id: 7,
         cat: "Web Management",
+        ico: web,
         children: [
             {
                 id: 1,
@@ -253,6 +258,7 @@ export const distributorContent = [
     {
         id: 1,
         cat: "Margin management",
+        ico: margin,
         children: [
             {
                 id: 1,
@@ -270,6 +276,7 @@ export const distributorContent = [
     {
         id: 2,
         cat: "User Manage",
+        ico: user,
         children: [
             {
                 id: 1,
@@ -279,7 +286,7 @@ export const distributorContent = [
             {
                 id: 2,
                 subcat: "User List",
-                link: "/userlist",
+                link: "/distuserlist",
             },
         ],
 
@@ -287,6 +294,7 @@ export const distributorContent = [
     {
         id: 3,
         cat: "Manage Wallet",
+        ico: wallet,
         children: [
             {
                 id: 1,
@@ -304,21 +312,17 @@ export const distributorContent = [
     {
         id: 4,
         cat: "UTI Pan Service",
+        ico: uti,
         children: [
             {
                 id: 1,
-                subcat: "Coupon Purchase",
+                subcat: "Portal Login",
                 link: "/utiekyc",
             },
             {
                 id: 2,
-                subcat: "New Psa Password Reset",
-                link: "/",
-            },
-            {
-                id: 3,
-                subcat: "Psa Profile Update",
-                link: "/",
+                subcat: "Uti History",
+                link: "/utihistory",
             },
         ],
 
@@ -326,6 +330,7 @@ export const distributorContent = [
     {
         id: 5,
         cat: "NSDL Pan Service",
+        ico: nsdl,
         children: [
             {
                 id: 1,
@@ -348,6 +353,7 @@ export const distributorContent = [
     {
         id: 6,
         cat: "Recharge Service",
+        ico: recharge,
         children: [
             {
                 id: 1,

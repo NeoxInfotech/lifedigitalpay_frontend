@@ -4,6 +4,8 @@ import { siderContent } from '../../../data/siderData'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { server } from '../../../main'
+import dashboard from "../../../assets/dashboard.png"
+import logout from "../../../assets/logout.png"
 import toast from 'react-hot-toast'
 
 const Sider = ({ items, }) => {
@@ -27,23 +29,32 @@ const Sider = ({ items, }) => {
             <div className="logo">
                 <h2>LIFE DIGITAL PAY</h2>
             </div>
-            <span className="cat" onClick={() => navigateTo("/")}>Dashboard</span>
+            <div className="cat" onClick={() => navigateTo("/")}>
+                <img src={dashboard} alt="" className='dash-log' />
+                Dashboard
+            </div>
             {
                 items.map((e) => (
-                    <div className='cats'>
-                        <a onClick={() => openSubCat(e.id)}>{e.cat}</a>
-                        {
-                            subcat && subId === e.id && e.children ? <div className="sub-cat">
-                                {e?.children?.map((subs) => (
-                                    <span onClick={() => navigateTo(subs.link)}>{subs.subcat}</span>
-                                ))}
-                            </div> : null
-                        }
+                    <>
+                        <div className='cats'>
+                            <div className='each' onClick={() => openSubCat(e.id)}>
+                                <img src={e.ico} alt="" />
+                                {e.cat}
+                            </div>
+                            {
+                                subcat && subId === e.id && e.children ? <div className="sub-cat">
+                                    {e?.children?.map((subs) => (
+                                        <span onClick={() => navigateTo(subs.link)}>{subs.subcat}</span>
+                                    ))}
+                                </div> : null
+                            }
 
-                    </div>
+                        </div>
+                    </>
+
                 ))
             }
-            <span className="cat" onClick={handleLogout}>Logout</span>
+            <div className="cat" onClick={handleLogout}> <img src={logout} alt="" className='dash-log' /> Logout</div>
         </div>
 
     )

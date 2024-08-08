@@ -62,7 +62,7 @@ const Register = () => {
                 under
             }, { withCredentials: true })
             toast.success(res.data.message)
-            navigateTo("/registerpay")
+            navigateTo("/")
             window.location.reload()
         } catch (error) {
             toast.error("Something went wrong")
