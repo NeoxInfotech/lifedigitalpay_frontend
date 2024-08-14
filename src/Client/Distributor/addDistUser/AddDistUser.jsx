@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "./styles.scss"
 import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
@@ -25,6 +25,8 @@ const AddDistUser = () => {
     const [openPopUp, setOpenPopUp] = useState(false)
     const [afterSubText, setAfterSubText] = useState(false)
     const [uti, setUti] = useState(0)
+    const [slablist, setSlabList] = useState([])
+    const [slabid, setSlabId] = useState([])
     const [nsdl, setNsdl] = useState(0)
     const usernamecreate = "RT-" + (Math.floor(Math.random() * (900000 - 10000 + 1)) + 10000);
     const upiPayment = "Upi Payment Only"
@@ -44,25 +46,34 @@ const AddDistUser = () => {
     const handleRegister = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post(`${server}/auth/secondaryregister`, {
-                name,
-                username,
-                password: username,
-                address,
-                pincode,
-                mobile,
-                email,
-                state,
-                company,
-                adhaar,
-                pan,
-                acctype,
-                accprice,
-                under
-            }, { withCredentials: true })
-            toast.success(res.data.message)
-            setAfterSubText(true)
-            setOpenPopUp(true)
+            if (pincode.length != 6) {
+                toast.error("Please Enter Valid Pin code")
+            } else if (mobile.length != 10) {
+                toast.error("Please Enter Valid Mobile Number")
+            } else if (adhaar.length != 12) (
+                toast.error("Please Enter a valid Adhaar Number")
+            )
+            else {
+                const res = await axios.post(`${server}/auth/secondaryregister`, {
+                    name,
+                    username,
+                    password: username,
+                    address,
+                    pincode,
+                    mobile,
+                    email,
+                    state,
+                    company,
+                    adhaar,
+                    pan,
+                    acctype,
+                    accprice,
+                    under
+                }, { withCredentials: true })
+                toast.success(res.data.message)
+                setAfterSubText(true)
+                setOpenPopUp(true)
+            }
         } catch (error) {
             toast.error("Something went wrong")
         }
@@ -78,6 +89,41 @@ const AddDistUser = () => {
         }
     }
 
+    const getslabs = async () => {
+        try {
+            const res = await axios.get(`${server}/commission/slabs/${user?.username}`, { withCredentials: true })
+            console.log(res.data.response)
+            setSlabList(res.data.response)
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const addSlab = async () => {
+        try {
+            const res = await axios.put(`${server}/commission/updateslab/${username}`, {
+                userId: username,
+                slab: slabid.slab,
+                vodafone: slabid.vodafone,
+                jio: slabid.jio,
+                bsnl: slabid.bsnl,
+                airtel: slabid.airtel,
+                idea: slabid.idea,
+                uti: slabid.uti,
+                nsdl: slabid.nsdl,
+
+            }, { withCredentials: true })
+            toast.success(res.data.message)
+        } catch (error) {
+            toast.error("Something Went Wrong")
+        }
+    }
+
+    useEffect(() => {
+        getslabs()
+    }, [])
+
     return (
         <div className='add-admin-user'>
             {
@@ -89,14 +135,21 @@ const AddDistUser = () => {
                     <div className='comm-form'>
                         <input type="number" placeholder='NSDL Pan Rate' onChange={(e) => setNsdl(e.target.value)} />
                         <input type="number" placeholder='UTI Pan Rate' onChange={(e) => setUti(e.target.value)} />
+                        <button onClick={handleMargins}>ADD</button>
+                        <span>Or</span>
                         <div className='slab'>
                             <label>Select Margin Slab :</label>
-                            <select name="Margin" id="Margin Slab">
-                                <option>Default</option>
-                            </select>
+                            <div className="buttons">
+                                {
+                                    slablist.map((e) => (
+                                        <button className='slab-butt' onClick={() => setSlabId(e)}>{e?.slab}</button>
+                                    ))
+                                }
+
+                            </div>
                         </div>
                         <div className="buttons">
-                            <button onClick={handleMargins}>ADD</button>
+                            <button onClick={addSlab}>ADD SLAB</button>
                             <button onClick={() => setOpenPopUp(false)}>Set As Default</button>
                         </div>
                     </div>
@@ -112,11 +165,11 @@ const AddDistUser = () => {
                     </div>
                     <div className="input-flex">
                         <input type="text" placeholder='Address' onChange={(e) => setAddress(e.target.value)} />
-                        <input type="text" placeholder='PinCode' onChange={(e) => setPincode(e.target.value)} />
+                        <input type="number" placeholder='PinCode' onChange={(e) => setPincode(e.target.value)} />
                     </div>
                     <div className="input-flex">
-                        <input type="text" placeholder='Mobile Number' onChange={(e) => setMobile(e.target.value)} />
-                        <input type="text" placeholder='Email ID' onChange={(e) => setEmail(e.target.value)} />
+                        <input type="number" placeholder='Mobile Number' onChange={(e) => setMobile(e.target.value)} />
+                        <input type="email" placeholder='Email ID' onChange={(e) => setEmail(e.target.value)} />
                     </div>
                     <div className="input-flex">
                         <input type="text" placeholder='State' onChange={(e) => setState(e.target.value)} />
@@ -124,7 +177,7 @@ const AddDistUser = () => {
                     </div>
                     <div className="input-flex">
                         <input type="text" placeholder='Aadhar' onChange={(e) => setAdhaar(e.target.value)} />
-                        <input type="text" placeholder='PAN' onChange={(e) => setPan(e.target.value)} />
+                        <input type="text" placeholder='PAN' value={pan.toUpperCase()} onChange={(e) => setPan(e.target.value)} />
                     </div>
                     <div className="input-drops-flex">
                         <div className="drop">

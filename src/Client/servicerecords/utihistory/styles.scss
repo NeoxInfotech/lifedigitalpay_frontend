@@ -1,0 +1,23 @@
+.activation {
+  height: 100%;
+  background-color: #6386ee;
+  text-align: center;
+  padding: 30px;
+  color: #fff;
+  gap: 30px;
+  img {
+    height: 90px;
+  }
+  h1 {
+    margin: 16px 0px;
+  }
+  .uti-gen {
+    width: 120px;
+    padding: 10px 0px;
+    border: none;
+    outline: none;
+    color: #000;
+    background-color: #fff;
+    cursor: pointer;
+  }
+}

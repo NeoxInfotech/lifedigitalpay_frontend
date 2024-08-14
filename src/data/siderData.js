@@ -9,6 +9,7 @@ import recharge from "../assets/recharge.png"
 export const siderContent = [
     {
         id: 1,
+        ico: margin,
         cat: "Margin management",
         children: [
             {
@@ -26,6 +27,7 @@ export const siderContent = [
     },
     {
         id: 2,
+        ico: wallet,
         cat: "Manage Wallet",
         children: [
             {
@@ -43,6 +45,7 @@ export const siderContent = [
     },
     {
         id: 3,
+        ico: uti,
         cat: "UTI Pan Service",
         children: [
             {
@@ -60,6 +63,7 @@ export const siderContent = [
     },
     {
         id: 4,
+        ico: nsdl,
         cat: "NSDL Pan Service",
         children: [
             {
@@ -82,6 +86,7 @@ export const siderContent = [
     },
     {
         id: 5,
+        ico: recharge,
         cat: "Recharge Service",
         children: [
             {

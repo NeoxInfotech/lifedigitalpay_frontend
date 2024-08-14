@@ -24,6 +24,11 @@ const Sider = ({ items, }) => {
             toast.error("Something went wrong")
         }
     }
+
+    const Sublinkopen = (e) => {
+        navigateTo(e);
+        setSubCat(false)
+    }
     return (
         <div className='sider'>
             <div className="logo">
@@ -31,7 +36,7 @@ const Sider = ({ items, }) => {
             </div>
             <div className="cat" onClick={() => navigateTo("/")}>
                 <img src={dashboard} alt="" className='dash-log' />
-                Dashboard
+                <span>Dashboard</span>
             </div>
             {
                 items.map((e) => (
@@ -39,12 +44,12 @@ const Sider = ({ items, }) => {
                         <div className='cats'>
                             <div className='each' onClick={() => openSubCat(e.id)}>
                                 <img src={e.ico} alt="" />
-                                {e.cat}
+                                <span>{e.cat}</span>
                             </div>
                             {
                                 subcat && subId === e.id && e.children ? <div className="sub-cat">
                                     {e?.children?.map((subs) => (
-                                        <span onClick={() => navigateTo(subs.link)}>{subs.subcat}</span>
+                                        <span onClick={() => Sublinkopen(subs.link)}>{subs.subcat}</span>
                                     ))}
                                 </div> : null
                             }
@@ -54,7 +59,7 @@ const Sider = ({ items, }) => {
 
                 ))
             }
-            <div className="cat" onClick={handleLogout}> <img src={logout} alt="" className='dash-log' /> Logout</div>
+            <div className="cat" onClick={handleLogout}> <img src={logout} alt="" className='dash-log' /> <span>Logout</span></div>
         </div>
 
     )

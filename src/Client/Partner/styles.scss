@@ -6,11 +6,35 @@
     width: 18%;
     padding: 20px;
     background: #e6787a;
+    @media (max-width: 768px) {
+      width: 10%;
+    }
+  }
+  .left-head {
+    width: 18%;
+    padding: 20px;
+    background: #e6787a;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 12px;
+      }
+    }
   }
   .right {
     width: 82%;
     padding: 20px;
     overflow: hidden;
+    @media (max-width: 768px) {
+      width: 90%;
+    }
+    @media (max-width: 500px) {
+      padding: 10px;
+    }
 
     .prof-header {
       margin-bottom: 30px;
@@ -21,6 +45,12 @@
       justify-content: space-between;
       background-color: #ddd;
       border-radius: 20px;
+      @media (max-width: 500px) {
+        flex-direction: column;
+        padding: 20px 30px;
+        gap: 20px;
+        text-align: center;
+      }
       .prof {
         display: flex;
         align-items: center;
@@ -36,6 +66,10 @@
         .ico {
           font-size: 20px;
         }
+      }
+
+      @media (max-width: 500px) {
+        height: auto;
       }
     }
   }

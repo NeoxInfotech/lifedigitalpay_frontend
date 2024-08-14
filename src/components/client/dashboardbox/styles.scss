@@ -3,7 +3,7 @@
   width: 30%;
   box-shadow: 10px 10px 67px -19px rgba(0, 0, 0, 0.39);
   @media (max-width: 500px) {
-    width: 90%;
+    width: 98%;
   }
   border-radius: 15px;
   display: flex;
@@ -14,5 +14,8 @@
   cursor: pointer;
   .img {
     height: 80px;
+    @media (max-width: 425px) {
+      height: 40px;
+    }
   }
 }

@@ -8,9 +8,16 @@
   width: 100%;
   padding: 40px 0px;
   box-shadow: 15px 11px 19px -14px rgba(0, 0, 0, 0.39);
+  @media (max-width: 768px) {
+    box-shadow: none;
+  }
   .recharge-img {
     height: 180px;
     width: 180px;
+    @media (max-width: 768px) {
+      width: 90px;
+      height: 90px;
+    }
     img {
       height: 100%;
       width: 100%;
@@ -21,6 +28,9 @@
     width: 40%;
     @media (max-width: 768px) {
       width: 90%;
+    }
+    @media (max-width: 500px) {
+      width: 99%;
     }
     flex-direction: column;
     gap: 15px;
@@ -67,6 +77,9 @@
         padding: 12px 0px;
         background-color: #e6787a;
         color: #fff;
+        @media (max-width: 768px) {
+          margin: 4px 5px;
+        }
       }
     }
   }
@@ -77,6 +90,10 @@
     gap: 20px;
     max-height: 300px;
     overflow-y: scroll;
+    @media (max-width: 425px) {
+      width: 100%;
+    }
+    width: 100%;
     .plan-list {
       display: flex;
       gap: 25px;
@@ -85,6 +102,10 @@
       margin-bottom: 10px;
       border-radius: 12px;
       cursor: pointer;
+      @media (max-width: 500px) {
+        padding: 10px 5px;
+        flex-direction: column;
+      }
     }
   }
   .reciept {

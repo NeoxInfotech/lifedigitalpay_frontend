@@ -31,10 +31,7 @@ const Register = () => {
             type: "Distributor",
             price: "899"
         },
-        {
-            type: "Super-Distributor",
-            price: "1299"
-        }
+        //   reserved for super distributor
     ]
     const handleType = (m) => {
         setAccPrice(m.price)

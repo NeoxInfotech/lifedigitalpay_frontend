@@ -11,9 +11,7 @@ import { UserContext } from './context/userContext'
 
 const App = () => {
   const { user } = useContext(UserContext)
-  const date = user?.createdAt.slice(0, 10)
-  const date2 = new Date(Date.now()).toString().slice(0, 10)
-  console.log(date, date2)
+
   return (
     <>
       {!user ? <Header /> : null}

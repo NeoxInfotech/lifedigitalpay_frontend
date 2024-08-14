@@ -12,6 +12,7 @@ const WalletHistory = () => {
     const fetchWalletHistory = async () => {
         const res = await axios.get(`${server}/wallet/wallethistory/${user?.username}`, { withCredentials: true })
         setHistoryData(res.data.response)
+
     }
     const searchByUser = () => {
         const filteredhistory = historydata?.filter(f => f.createdAt.slice(0, 10) === search)
@@ -62,16 +63,17 @@ const WalletHistory = () => {
                             <th>Status</th>
                         </tr>
                         {
-                            historydata.map((h) => (
-                                <tr className={`${h.status === 'failure' ? 'fail' : ""}`}>
-                                    <td className='udetail'><span>{h.userdetails}</span>{h.createdAt.slice(0, 10)}</td>
-                                    <td>{h.txntype}</td>
-                                    <td>{h.amount}</td>
-                                    <td>{h.opening}</td>
-                                    <td>{h.closing}</td>
-                                    <td>{h.status}</td>
-                                </tr>
-                            )).slice(firstIndex, lastIndex)
+                            historydata.length === 0 ? <h4 className='no-records'>No records to show</h4> :
+                                historydata.map((h) => (
+                                    <tr className={`${h.status === 'failure' ? 'fail' : ""}`}>
+                                        <td className='udetail'><span>{h.userdetails}</span>{h.createdAt.slice(0, 10)}</td>
+                                        <td>{h.txntype}</td>
+                                        <td>{h.amount}</td>
+                                        <td>{h.opening}</td>
+                                        <td>{h.closing}</td>
+                                        <td>{h.status}</td>
+                                    </tr>
+                                )).slice(firstIndex, lastIndex)
                         }
 
                     </tbody>

@@ -3,14 +3,22 @@
   flex-direction: column;
   gap: 30px;
   align-items: center;
+  text-align: center;
   img {
     height: 200px;
+    font-size: 12px;
+    @media (max-width: 600px) {
+      height: 100px;
+    }
   }
   .pay-money {
     display: flex;
     flex-direction: column;
     gap: 20px;
     width: 50%;
+    @media (max-width: 600px) {
+      width: 100%;
+    }
     input {
       padding: 10px;
       outline: none;
@@ -21,6 +29,41 @@
       background: #6386ee;
       border: none;
       outline: none;
+    }
+  }
+  .qr-pay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    .qr {
+      img {
+        height: 270px;
+        @media (max-width: 600px) {
+          height: 150px;
+        }
+      }
+    }
+    .utr {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @media (max-width: 600px) {
+        flex-direction: column;
+        gap: 10px;
+      }
+      input,
+      button {
+        padding: 15px;
+        outline: none;
+        border: none;
+        background-color: #ddd;
+      }
+      button {
+        background-color: #6386ee;
+        color: #fff;
+      }
     }
   }
 }

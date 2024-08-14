@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "./styles.scss"
 import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 import { server } from '../../main'
 import axios from 'axios'
 import { RxCross1 } from "react-icons/rx";
+import { UserContext } from '../../context/userContext'
 
 
 const AddAdminUser = () => {
@@ -25,9 +26,12 @@ const AddAdminUser = () => {
     const [afterSubText, setAfterSubText] = useState(false)
     const [uti, setUti] = useState(0)
     const [nsdl, setNsdl] = useState(0)
+    const [slablist, setSlabList] = useState([])
+    const [slabid, setSlabId] = useState([])
     const usernamecreate = "RT-" + (Math.floor(Math.random() * (900000 - 10000 + 1)) + 10000);
     const upiPayment = "Upi Payment Only"
     const navigateTo = useNavigate()
+    const { user } = useContext(UserContext)
     const accData = [
         {
             type: "Retailer",
@@ -37,10 +41,7 @@ const AddAdminUser = () => {
             type: "Distributor",
             price: "899"
         },
-        {
-            type: "Super-Distributor",
-            price: "1299"
-        }
+        // Reserve for superdistributor
     ]
     const handleType = (m) => {
         setAccPrice(m.price)
@@ -85,6 +86,41 @@ const AddAdminUser = () => {
         }
     }
 
+    const getslabs = async () => {
+        try {
+            const res = await axios.get(`${server}/commission/slabs/${user?.username}`, { withCredentials: true })
+            console.log(res.data.response)
+            setSlabList(res.data.response)
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const addSlab = async () => {
+        try {
+            const res = await axios.put(`${server}/commission/updateslab/${username}`, {
+                userId: username,
+                slab: slabid.slab,
+                vodafone: slabid.vodafone,
+                jio: slabid.jio,
+                bsnl: slabid.bsnl,
+                airtel: slabid.airtel,
+                idea: slabid.idea,
+                uti: slabid.uti,
+                nsdl: slabid.nsdl,
+
+            }, { withCredentials: true })
+            toast.success(res.data.message)
+        } catch (error) {
+            toast.error("Something Went Wrong")
+        }
+    }
+
+    useEffect(() => {
+        getslabs()
+    }, [])
+
     return (
         <div className='add-admin-user'>
             {
@@ -96,14 +132,21 @@ const AddAdminUser = () => {
                     <div className='comm-form'>
                         <input type="number" placeholder='NSDL Pan Rate' onChange={(e) => setNsdl(e.target.value)} />
                         <input type="number" placeholder='UTI Pan Rate' onChange={(e) => setUti(e.target.value)} />
+                        <button onClick={handleMargins}>ADD MARGINS</button>
+                        <span>OR</span>
                         <div className='slab'>
                             <label>Select Margin Slab :</label>
-                            <select name="Margin" id="Margin Slab">
-                                <option>Default</option>
-                            </select>
+                            <div className="buttons">
+                                {
+                                    slablist.map((e) => (
+                                        <button className='slab-butt' onClick={() => setSlabId(e)}>{e?.slab}</button>
+                                    ))
+                                }
+
+                            </div>
                         </div>
                         <div className="buttons">
-                            <button onClick={handleMargins}>ADD</button>
+                            <button onClick={addSlab}>ADD SLAB</button>
                             <button onClick={() => setOpenPopUp(false)}>Set As Default</button>
                         </div>
                     </div>

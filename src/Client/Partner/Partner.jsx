@@ -20,6 +20,8 @@ import AdminUserList from '../../Admin/adminUserList/AdminUserList'
 import UtiCoupon from '../services/uti/UtiCoupon/UtiCoupon'
 import AddDistUser from '../Distributor/addDistUser/AddDistUser'
 import DistUserList from '../Distributor/distuserList/DistUserList'
+import UtiHistory from '../servicerecords/utihistory/UtiHistory'
+import MarginSlab from '../margins/slab/MarginSlab'
 
 
 const Partner = () => {
@@ -31,7 +33,7 @@ const Partner = () => {
             {
                 user?.active ? <div className="left">
                     <Sider items={user?.acctype === "Retailer" ? siderContent : user?.acctype === "Admin" ? AdminContent : distributorContent} />
-                </div> : <div className='left'><h1>LifeDigitalPay</h1></div>
+                </div> : <div className='left-head'><h1>LifeDigitalPay</h1> <h2>Please Register First, Your account is inactive</h2></div>
             }
             <div className="right">
                 <div className="prof-header">
@@ -51,17 +53,21 @@ const Partner = () => {
                     !user?.active ?
                         <Routes>
                             <Route path='/' element={<OneTimePayment />} />
+                            <Route path='*' element={<OneTimePayment />} />
                         </Routes> :
                         <Routes>
                             <Route path='/' element={<Dashboard />} />
+                            <Route path='*' element={<Dashboard />} />
                             <Route path='/addmoney' element={<AddMoney />} />
                             <Route path='/profile' element={<Profile />} />
                             <Route path='/mobilerecharge' element={<MobileRecharge />} />
                             <Route path='/wallethistory' element={<WalletHistory />} />
                             <Route path='/rechargehistory' element={<RechargeHistory />} />
                             <Route path='/marginlist' element={<CommissionList />} />
+                            <Route path='/marginslab' element={<MarginSlab />} />
                             <Route path='/nsdlekyc' element={<NsdlKyc />} />
                             <Route path='/nsdlhistory' element={<NsdlHistory />} />
+                            <Route path='/utihistory' element={<UtiHistory />} />
                             <Route path='/utiekyc' element={<UtiCoupon />} />
                             {user?.acctype === "Admin" ? <Route path='/adduseradmin' element={<AddAdminUser />} /> : null}
                             {user?.acctype === "Admin" ? <Route path='/alluserlist' element={<AdminUserList />} /> : null}

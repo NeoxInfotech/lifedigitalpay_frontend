@@ -18,6 +18,9 @@ const UtiCoupon = () => {
     const [pan, setPan] = useState('')
     const [adhaar, setAdhaar] = useState('')
     const [agentId, setAgentId] = useState('')
+    const [userdetails, setUserDetails] = useState(false)
+    const [userutiagent, setUserUtiagent] = useState('')
+    const [userutiurl, setUserUtiUrl] = useState('')
 
     const generateUti = async (e) => {
         e.preventDefault()
@@ -39,9 +42,18 @@ const UtiCoupon = () => {
             toast.success(res.data.message)
             console.log(res.data.response)
             setAgentId(res.data.order)
-
+            setUserDetails(true)
         } catch (error) {
             toast.error("Something Went Wrong")
+            console.log(error)
+        }
+    }
+
+    const getuserPass = async () => {
+        try {
+            const res = await axios.post(`${server}/uti/utiloginuser/${agentId}`, { withCredentials: true })
+            setUserUtiUrl(res.data.url)
+        } catch (error) {
             console.log(error)
         }
     }
@@ -50,7 +62,7 @@ const UtiCoupon = () => {
     const getLoginLink = async () => {
         try {
             const res = await axios.post(`${server}/uti/utilogin/${user?.username}`, { withCredentials: true })
-            console.log(res.response)
+            console.log(res.data.response)
             setUrl(res.data.url)
 
         } catch (error) {
@@ -62,6 +74,7 @@ const UtiCoupon = () => {
     useEffect(() => {
         getLoginLink();
     }, [])
+
     return (
         <div className='uti-coupon'>
             {
@@ -100,6 +113,16 @@ const UtiCoupon = () => {
                                 </div>
                                 <button>Submit</button>
                             </form>
+                            {
+                                userdetails ? <div className="user-details">
+                                    <h2>Agent Details After submission - </h2>
+                                    <span>PSA login Id-</span><span>{agentId}</span>
+                                    <span>PSA login Password-</span><span>{agentId}</span>
+                                    <span>PSA login Link-</span><a href={userutiurl}>Your UTI Login Link</a>
+                                    <button onClick={getuserPass}>Get User Password</button>
+                                </div> : null
+                            }
+
                         </div>
                     </div>
             }
