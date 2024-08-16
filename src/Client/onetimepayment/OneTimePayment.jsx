@@ -52,9 +52,9 @@ const OneTimePayment = () => {
                 <button onClick={updateAccountToActive}>Add Money</button>
             </div>
             {
-                !qrcreate ? <div className="qr-pay">
+                qrcreate ? <div className="qr-pay">
                     <div className="qr">
-                        <img src={demoqr} alt="" />
+                        <img src={qr} alt="" />
                         <h4>Scan the Qr and Pay Your Registration Amount, After Payment verify Your UTR Number</h4>
                     </div>
                     <div className="utr">
