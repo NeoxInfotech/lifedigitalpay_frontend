@@ -41,7 +41,7 @@ const WalletHistory = () => {
     }
     useEffect(() => {
         fetchRechargeHistory();
-    }, [])
+    }, [search])
     return (
         <div className='wallet-history'>
             <h1>YOUR RECHARGE HISTORY</h1>

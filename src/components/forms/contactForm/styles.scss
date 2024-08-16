@@ -19,13 +19,14 @@
         font-size: 30px;
       }
     }
-    button {
-      width: 230px;
-      padding: 10px;
+    .butt {
+      padding: 12px;
       outline: none;
       border: none;
       background-color: #e6787a;
       color: #fff;
+      text-decoration: none;
+      width: 240px;
     }
   }
   .right {

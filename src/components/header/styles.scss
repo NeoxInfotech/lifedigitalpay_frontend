@@ -13,9 +13,9 @@
   }
 
   .logo {
-    h2 {
+    img {
       color: White;
-      font-size: 35px;
+      height: 75px;
       @media (max-width: 600px) {
         font-size: 22px;
       }

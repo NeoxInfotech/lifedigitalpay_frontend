@@ -8,6 +8,8 @@ import Login from './screens/auth/login/Login'
 import Partner from './Client/Partner/Partner'
 import { Toaster } from "react-hot-toast"
 import { UserContext } from './context/userContext'
+import Services from './screens/services/Services'
+import Pricing from './screens/pricing/Pricing'
 
 const App = () => {
   const { user } = useContext(UserContext)
@@ -23,6 +25,8 @@ const App = () => {
             <Route path='/' element={<Home />} />
             <Route path='/register' element={<Register />} />
             <Route path='/login' element={<Login />} />
+            <Route path='/allservice' element={<Services />} />
+            <Route path='/pricing' element={<Pricing />} />
             <Route path='*' element={<Home />} />
           </Routes>
       }

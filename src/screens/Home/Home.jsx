@@ -47,12 +47,12 @@ const Home = () => {
                     </div>
                     <div className="content">
                         <span>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, ratione cupiditate. Perspiciatis dolores veniam exercitationem saepe placeat distinctio eveniet consectetur porro sit possimus provident, sapiente minima numquam facere esse itaque nulla! Deleniti voluptate facilis id tempore blanditiis sit, enim ex maxime officia totam fuga numquam ipsum quia illo harum! Rerum, veniam? Voluptatibus unde, rerum vitae eaque ipsa magnam et sequi omnis aliquam libero ratione minus adipisci? Nobis consectetur maiores placeat exercitationem, odit officiis delectus enim quae rem repellat ipsam veniam!
+                            Life Digital Pay is your trusted partner for comprehensive PAN services and digital recharge solutions. We are committed to offering a seamless experience for managing your financial and digital needs. Our platform is designed to be simple, reliable, and accessible, whether you’re applying for a PAN card, recharging your mobile or D2H, or managing your online accounts. With Life Digital Pay, convenience and efficiency are always at your fingertips.
                         </span>
                         <ul className='points'>
-                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa similique corporis illo doloremque quisquam?</li>
-                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa similique corporis illo doloremque quisquam?</li>
-                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa similique corporis illo doloremque quisquam?</li>
+                            <li>PAN Card Services: Assistance with applying for new PAN cards, corrections, and updates through UTI and NSDL.</li>
+                            <li> Instant and secure top-up options for all major mobile networks.Hassle-free recharge solutions for D2H services, ensuring uninterrupted entertainment</li>
+                            <li>Tailored strategies to help you manage and optimize financial margins. And Tools to manage your digital presence and financial transactions efficiently.</li>
                         </ul>
                     </div>
                 </div>

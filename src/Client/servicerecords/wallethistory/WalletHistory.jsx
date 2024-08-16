@@ -43,7 +43,7 @@ const WalletHistory = () => {
     }
     useEffect(() => {
         fetchWalletHistory();
-    }, [])
+    }, [search])
     return (
         <div className='wallet-history'>
             <h1>YOUR WALLET HISTORY</h1>

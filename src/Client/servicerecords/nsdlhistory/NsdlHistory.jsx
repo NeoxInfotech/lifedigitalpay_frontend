@@ -56,7 +56,7 @@ const NsdlHistory = () => {
     }
     useEffect(() => {
         fetchNsdlHistory();
-    }, [])
+    }, [search])
     return (
         <div className='wallet-history'>
             <h1>YOUR NSDL HISTORY</h1>

@@ -1,0 +1,27 @@
+.pricing {
+  min-height: 80vh;
+  padding: 70px 60px;
+  @media (max-width: 768px) {
+    padding: 70px 20px;
+  }
+  .logo {
+    text-align: center;
+    padding: 10px 0px;
+    .logoimg {
+      height: 250px;
+    }
+  }
+  .pricing-head {
+    font-size: 45px;
+    text-align: center;
+  }
+  .pricing-list {
+    margin-top: 50px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: #fff;
+    gap: 50px;
+  }
+}

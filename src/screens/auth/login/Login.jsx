@@ -5,7 +5,7 @@ import axios from 'axios'
 import { server } from '../../../main'
 import toast from 'react-hot-toast'
 import { UserContext } from '../../../context/userContext'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Login = () => {
     const [username, setUsername] = useState('')
@@ -41,7 +41,7 @@ const Login = () => {
                     <input type="password" placeholder='Partner Password' onChange={(e) => setPassword(e.target.value)} />
                     <button>Login</button>
                 </form>
-                <span>Dosen't have account Register</span>
+                <span>Dosen't have account <Link to={"/register"}>Register</Link></span>
             </div>
         </div>
     )

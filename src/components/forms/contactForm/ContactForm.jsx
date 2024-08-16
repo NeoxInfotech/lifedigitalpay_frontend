@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import "./styles.scss"
+import { Link } from 'react-router-dom'
 
 const ContactForm = () => {
     return (
@@ -7,7 +8,7 @@ const ContactForm = () => {
             <div className="left">
                 <h2>Contact Us for More details and enquiry</h2>
                 <span>Fill up the form and we will get in touch with you within 24 hours.</span>
-                <button >Directly Register for Partnership</button>
+                <Link className='butt' to={"/register"} >Directly Register for Partnership</Link>
 
             </div>
             <div className='right'>

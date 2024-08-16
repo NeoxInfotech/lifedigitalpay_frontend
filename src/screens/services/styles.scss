@@ -1,0 +1,40 @@
+.services {
+  padding: 50px 50px;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  @media (max-width: 768px) {
+    padding: 50px 15px;
+  }
+  h1 {
+    font-size: 40px;
+    text-align: center;
+  }
+  .logo {
+    text-align: center;
+    padding: 10px 0px;
+    .logoimg {
+      height: 250px;
+    }
+  }
+  .service-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  .service-page-button {
+    text-align: center;
+    .button {
+      padding: 10px 20px;
+      text-decoration: none;
+      font-size: 16px;
+      outline: none;
+      border: none;
+      background: #e6787a;
+      color: #fff;
+    }
+  }
+}

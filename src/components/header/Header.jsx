@@ -4,6 +4,7 @@ import Menu from './Menu'
 import { CgMenu } from "react-icons/cg";
 import { FaUserTie } from "react-icons/fa";
 import "./styles.scss"
+import ldp from "../../assets/LOGO.png"
 
 
 const Header = () => {
@@ -12,7 +13,7 @@ const Header = () => {
     return (
         <div className='navbar'>
             <div className="logo">
-                <h2>LifeDigitalPay</h2>
+                <img src={ldp} alt="" />
             </div>
             {
                 user ? <div className="items">

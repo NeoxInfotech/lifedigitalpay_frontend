@@ -237,23 +237,23 @@ export const AdminContent = [
         id: 7,
         cat: "Web Management",
         ico: web,
-        children: [
-            {
-                id: 1,
-                subcat: "E-KYC PAN Card",
-                link: "/nsdlekyc",
-            },
-            {
-                id: 2,
-                subcat: "E-KYC History",
-                link: "/nsdlhistory",
-            },
-            {
-                id: 3,
-                subcat: "PAN Status",
-                link: "/nsdlstatus",
-            },
-        ],
+        // children: [
+        //     {
+        //         id: 1,
+        //         subcat: "E-KYC PAN Card",
+        //         link: "/nsdlekyc",
+        //     },
+        //     {
+        //         id: 2,
+        //         subcat: "E-KYC History",
+        //         link: "/nsdlhistory",
+        //     },
+        //     {
+        //         id: 3,
+        //         subcat: "PAN Status",
+        //         link: "/nsdlstatus",
+        //     },
+        // ],
 
     },
 
