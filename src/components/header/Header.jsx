@@ -28,8 +28,8 @@ const Header = () => {
                         <Link className='link' to={"/"}>Home</Link>
                         <Link className='link' to={"/allservice"}>Services</Link>
                         <Link className='link' to={"/pricing"}>Pricing</Link>
-                        <Link className='link link-butt' to="/login" onClick={() => window.scrollTo(0)}>Login</Link>
-                        <Link className='link link-butt' to="/register" onClick={() => window.scrollTo(0)}>Register</Link>
+                        <Link className='link link-butt' to="/login" >Login</Link>
+                        <Link className='link link-butt' to="/register" >Register</Link>
                     </div>
             }
 
@@ -42,3 +42,7 @@ const Header = () => {
 }
 
 export default Header
+
+
+
+// onClick={() => window.scrollTo(0)}
